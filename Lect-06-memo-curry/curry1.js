@@ -10,10 +10,8 @@ let add=(num)=> {
         return 0;
     else {
         return function helper(v){
-            //base case
             if(!v)
                 return num;               
-            //recursive case
             num +=v;
             return helper;
         }
