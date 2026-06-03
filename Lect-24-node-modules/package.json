@@ -1,0 +1,19 @@
+{
+  "name": "lect-24-node-modules",
+  "version": "1.0.0",
+  "description": "alpha batch node js lecture",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "vikas patel",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.17.0",
+    "bcrypt": "^6.0.0",
+    "calculator": "^0.1.12",
+    "express": "5.2.1"
+  }
+}
