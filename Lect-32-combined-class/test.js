@@ -58,45 +58,72 @@ app.get("/",(req,res)=>{
     res.render("home.ejs");
 })
 
-app.get("/test",async (req,res)=>{
-    //find()
-    //find({name:"khatri"})
-    //  let data= await Student.findOne({name:"rewas"});
+// app.get("/test",async (req,res)=>{
+//     //find()
+//     //find({name:"khatri"})
+//     //  let data= await Student.findOne({name:"rewas"});
 
-    // let data=await Student.updateMany({name:"khatri"},{name:"rewas"});
+//     // let data=await Student.updateMany({name:"khatri"},{name:"rewas"});
      
-    // let data=await Student.updateOne({name:"rewas"},{name:"parth sarthi ka dost"});
-    // let data=await Student.deleteMany({name:"rewas"});
-    // let data=await Student.deleteOne({name:"vikas"});
-//     let data= await Student.deleteMany(
-//     { age: { $gte: 18 } }
-// );
+//     // let data=await Student.updateOne({name:"rewas"},{name:"parth sarthi ka dost"});
+//     // let data=await Student.deleteMany({name:"rewas"});
+//     // let data=await Student.deleteOne({name:"vikas"});
+// //     let data= await Student.deleteMany(
+// //     { age: { $gte: 18 } }
+// // );
 
-let data=await Student.findByIdAndDelete("6a32812f7605c31c4e8c645b");
+// let data=await Student.findByIdAndDelete("6a32812f7605c31c4e8c645b");
     
     
-    console.log(data);
-     res.send("bye..testing route..")
+//     console.log(data);
+//      res.send("bye..testing route..")
      
-})
+// })
 
 
 app.get("/getdata", async (req, res) => {
-    //async task. await ...
+try {
+        //async task. await ...
     let allstudent = await Student.find();  //async task
     console.log(allstudent);
 
-    let obj = {
-        "name": "parth",
-        age: 20
-    };
+    // let obj = {
+    //     "name": "parth",
+    //     age: 20
+    // };
 
 
     // res.send("home page");
     // res.send(obj);
     // res.send(allstudent)
     res.render("students.ejs", { allstudent })
+} catch (error) {
+    res.send(error);
+}
 })
+
+
+
+app.get("/delete/:userid",async(req,res)=>{
+   console.log(req.params.userid);
+    let deldata= await Student.findByIdAndDelete(req.params.userid);
+//
+   res.redirect("/getdata");
+// res.send("item deleted");
+})
+
+app.get("/edit/:userid",async(req,res)=>{
+          let data=await Student.findById(req.params.userid);
+    res.render("edit.ejs",{data});
+})
+
+app.post("/update/:userid",async(req,res)=>{
+    let data=await Student.findByIdAndUpdate(req.params.userid,req.body,{new:true});
+    res.redirect("/getdata");
+})
+
+
+
 
 app.get("/insertdata",(req,res)=>{
     res.render("form.ejs");
@@ -116,7 +143,8 @@ app.post("/createdata",async (req, res) => {
 
     console.log(data);
     
-    res.send("data saved..")
+    res.redirect("/getdata");
+    // res.send("data saved..")
 })
 
 app.listen(3000, () => {

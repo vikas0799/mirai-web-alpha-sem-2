@@ -3,17 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Students Data</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background-color: #f4f4f4;
+            padding: 40px;
+        }
+
+        h1{
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .container{
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .card{
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        }
+
+        .card p{
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .card span{
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        hr{
+            margin-top: 20px;
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+
 </head>
 <body>
-    <h1>students data profile</h1>
-   <% allstudent.forEach((element)=>{ %>
-      <h1> <%= element.name  %> </h1>
-      <h1> <%= element.age  %> </h1>
-      <h1> <%= element.course  %> </h1>
 
-<hr>
-   <% }) %>
+    <h1>Students Data Profile</h1>
+
+    <div class="container">
+
+        <% allstudent.forEach((element)=>{ %>
+
+            <div class="card">
+
+                <p><span>ID :</span> <%= element._id %></p>
+
+                <p><span>Name :</span> <%= element.name %></p>
+
+                <p><span>Age :</span> <%= element.age %></p>
+
+                <p><span>Email :</span> <%= element.email %></p>
+
+                <p><span>IP :</span> <%= element.ip %></p>
+
+                <p><span>Version :</span> <%= element.__v %></p>
+
+<a href="/delete/<%=element._id%>">delete</a>
+                <a href="/edit/<%=element._id%>">edit</a>
+
+                <hr>
+
+            </div>
+
+        <% }) %>
+
+    </div>
 
 </body>
 </html>
