@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gig Worker Delivery</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#f5f7fb;
+        }
+
+        nav{
+            background:#111827;
+            color:white;
+            padding:18px 8%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        nav h2{
+            color:#22c55e;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin-left:25px;
+        }
+
+        .hero{
+            height:90vh;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:0 8%;
+        }
+
+        .left{
+            width:50%;
+        }
+
+        .left h1{
+            font-size:55px;
+            color:#111827;
+            margin-bottom:20px;
+        }
+
+        .left span{
+            color:#22c55e;
+        }
+
+        .left p{
+            color:#555;
+            font-size:18px;
+            line-height:30px;
+            margin-bottom:35px;
+        }
+
+        .btn{
+            padding:15px 30px;
+            background:#22c55e;
+            color:white;
+            text-decoration:none;
+            border-radius:8px;
+            font-size:18px;
+            transition:.3s;
+        }
+
+        .btn:hover{
+            background:#16a34a;
+        }
+
+        .right{
+            width:40%;
+            display:flex;
+            justify-content:center;
+        }
+
+        .card{
+            width:350px;
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,.15);
+            text-align:center;
+        }
+
+        .card h2{
+            color:#22c55e;
+            margin-bottom:15px;
+        }
+
+        .timer{
+            font-size:60px;
+            font-weight:bold;
+            color:#111827;
+            margin:20px 0;
+        }
+
+        .status{
+            background:#dcfce7;
+            color:#15803d;
+            padding:12px;
+            border-radius:8px;
+            margin-top:20px;
+            font-weight:bold;
+        }
+
+        footer{
+            background:#111827;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>QuickGig</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/orders">Orders</a>
+            <a href="/worker">Become Worker</a>
+            <a href="/login">Login</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+
+        <div class="left">
+
+            <h1>
+                Your Order is <span>Reaching in 5 Minutes 🚀</span>
+            </h1>
+
+            <p>
+                Our nearest Gig Worker has already picked up your order.
+                Sit back and relax while we deliver it safely and quickly.
+            </p>
+
+            <a href="/track" class="btn">
+                Track Live Order
+            </a>
+
+        </div>
+
+
+        <div class="right">
+
+            <div class="card">
+
+                <h2>🚴 Delivery Status</h2>
+
+                <div class="timer">
+                    05:00
+                </div>
+
+                <h3>Order Reaching Soon</h3>
+
+                <p style="margin-top:15px;color:gray;">
+                    Rider has picked up your order.
+                </p>
+
+                <div class="status">
+                    Estimated Arrival: 5 Minutes
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        © 2026 QuickGig | Fast Delivery by Local Gig Workers
+    </footer>
+
+</body>
+</html>
